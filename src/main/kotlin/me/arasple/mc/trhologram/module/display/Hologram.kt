@@ -60,6 +60,9 @@ class Hologram(
             holograms.forEach {
                 it.destroy(player)
             }
+            externalHolograms.forEach {
+                it.destroy(player)
+            }
         }
 
     }
