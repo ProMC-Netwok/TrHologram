@@ -17,8 +17,11 @@ object ListenerMovement {
     @SubscribeEvent
     fun onMove(e: PlayerMoveEvent) {
         val player = e.player
+        // 只检测位置不同情况 不检测玩家原地视角移动情况
+        val fromblock = e.from.block
+        val toblock = e.to?.block
 
-        if (!cd.hasNext(player.name)) {
+        if (!cd.hasNext(player.name) && fromblock != toblock) {
             Hologram.refreshAll(player)
         }
     }

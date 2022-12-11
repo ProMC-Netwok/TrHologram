@@ -3,6 +3,7 @@ package me.arasple.mc.trhologram.module.listener
 import me.arasple.mc.trhologram.module.display.Hologram
 import org.bukkit.event.player.PlayerJoinEvent
 import taboolib.common.platform.event.SubscribeEvent
+import taboolib.common.platform.function.submit
 
 /**
  * @author Arasple
@@ -12,7 +13,9 @@ object ListenerJoin {
 
     @SubscribeEvent
     fun onJoin(e: PlayerJoinEvent) {
-        Hologram.refreshAll(e.player)
+        submit(delay = 2, async = true) {
+            Hologram.refreshAll(e.player)
+        }
     }
 
 }
