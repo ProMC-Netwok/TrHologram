@@ -13,9 +13,7 @@ object ListenerJoin {
 
     @SubscribeEvent
     fun onJoin(e: PlayerJoinEvent) {
-        submit(delay = 2, async = true) {
-            Hologram.refreshAll(e.player)
-        }
+        Hologram.refreshAll(e.player)
     }
 
 }

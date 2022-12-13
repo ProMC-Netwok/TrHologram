@@ -13,7 +13,6 @@ object ListenerQuit {
     @SubscribeEvent
     fun onQuit(e: PlayerQuitEvent) {
         val player = e.player
-
         ListenerMovement.cd.reset(player.name)
         Hologram.destroyAll(player)
     }
