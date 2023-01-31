@@ -21,7 +21,7 @@ object ListenerMovement {
         val fromblock = e.from.block
         val toblock = e.to?.block
 
-        if (fromblock != toblock) {
+        if (!cd.hasNext(player.name) && fromblock != toblock) {
             Hologram.refreshAll(player)
         }
     }

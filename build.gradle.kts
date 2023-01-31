@@ -1,11 +1,11 @@
 plugins {
     `maven-publish`
     id("java")
-    id("io.izzel.taboolib") version "1.34"
+    id("io.izzel.taboolib") version "1.55"
     id("org.jetbrains.kotlin.jvm") version "1.5.10"
     id("com.github.johnrengelman.shadow") version "7.0.0"
 }
-    
+
 group = "me.arasple.mc.trhologram"
 version = "2.4-pre29"
 description = "Modern & Advanced Hologram-Plugin for Minecraft Servers"
@@ -38,7 +38,7 @@ taboolib {
     }
 
     classifier = null
-    version = "6.0.9-65"
+    version = "6.0.10-68"
 }
 
 repositories {
