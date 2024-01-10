@@ -1,8 +1,8 @@
 plugins {
     `maven-publish`
     id("java")
-    id("io.izzel.taboolib") version "1.55"
-    id("org.jetbrains.kotlin.jvm") version "1.5.10"
+    id("io.izzel.taboolib") version "1.56"
+    id("org.jetbrains.kotlin.jvm") version "1.9.0"
     id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
@@ -32,13 +32,12 @@ taboolib {
             name("PlaceholderAPI").optional(true)
             name("TrMenu").optional(true)
             name("SkinsRestorer").optional(true)
-            name("Multiverse-Core").loadafter(true)
-            name("PlotSquared").loadafter(true)
+            name("Multiverse-Core").optional(true)
         }
     }
 
     classifier = null
-    version = "6.0.10-68"
+    version = "6.0.12-69"
 }
 
 repositories {

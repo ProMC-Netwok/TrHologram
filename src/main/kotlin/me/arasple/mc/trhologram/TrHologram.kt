@@ -5,6 +5,8 @@ import me.arasple.mc.trhologram.module.conf.HologramLoader
 import me.arasple.mc.trhologram.module.display.Hologram
 import me.arasple.mc.trhologram.module.service.Updater
 import org.bukkit.Bukkit
+import org.bukkit.event.EventHandler
+import org.bukkit.event.world.WorldLoadEvent
 import taboolib.common.platform.Plugin
 import taboolib.common.platform.function.console
 import taboolib.common.platform.function.disablePlugin
@@ -12,6 +14,7 @@ import taboolib.common.platform.function.pluginVersion
 import taboolib.module.lang.sendLang
 import taboolib.module.nms.MinecraftVersion
 import taboolib.platform.BukkitPlugin
+
 
 /**
  * @author Arasple
@@ -33,9 +36,8 @@ object TrHologram : Plugin() {
         }
 
         Settings.init()
-        HologramLoader.load(Bukkit.getConsoleSender())
         console().sendLang("Plugin-Enabled", pluginVersion)
-
+        HologramLoader.load(Bukkit.getConsoleSender())
         Updater.init()
     }
 

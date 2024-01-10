@@ -54,8 +54,7 @@ class Position: Cloneable {
     companion object {
 
         @JvmStatic
-        fun fromLocation(l: Location) =
-            Position(l.world!!, l.x, l.y, l.z)
+        fun fromLocation(l: Location) = Position(l.world!!, l.x, l.y, l.z)
 
     }
 

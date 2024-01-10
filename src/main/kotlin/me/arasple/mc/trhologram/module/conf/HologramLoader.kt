@@ -71,7 +71,7 @@ object HologramLoader {
         }
     }
 
-    fun load(): Int {
+    private fun load(): Int {
         Hologram.clear()
         TrHologramAPI.resetIndex()
 
@@ -84,12 +84,12 @@ object HologramLoader {
     fun load(file: File): Hologram {
         val id = file.nameWithoutExtension
         val conf = YamlConfiguration.loadConfiguration(file)
-        val location = conf.getString("Location")?.parseLocation() ?: throw Exception("No valid location")
+        val location = conf.getString("Location")?.parseLocation()?: throw Exception("No valid location")
         val lineSpacing = conf.getDouble("Options.Line-Spacing", Settings.INSTANCE.lineSpacing)
         val viewDistance =
             conf.getDouble("Options.View-Distance", Settings.INSTANCE.viewDistance).coerceAtMost(50.0)
         val viewCondition = conf.getString("Options.View-Condition", Settings.INSTANCE.viewCondition).let {
-            if (it == null || it.isBlank()) null
+            if (it.isNullOrBlank()) null
             else Condition(it)
         }
         val refreshCondition = conf.getLong("Options.Refresh-Condition", Settings.INSTANCE.refershCondition)
